@@ -92,8 +92,8 @@ int main(int argc, char *argv[])
 
   /* read image, convert color, and resize */
   cout << "Preprocessing input..." << endl;
-  cv::Mat image = cv::imread(imageFilename, CV_LOAD_IMAGE_COLOR);
-
+  // cv::Mat image = cv::imread(imageFilename, CV_LOAD_IMAGE_COLOR);
+  cv::Mat image = cv::imread(imageFilename, cv::IMREAD_COLOR);
   if (image.data == NULL)
   {
     cout << "Could not read image from file." << endl;
