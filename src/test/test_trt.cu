@@ -265,7 +265,7 @@ void test(const TestConfig &testConfig)
   outputBindingIndex = engine->getBindingIndex(testConfig.outputNodeName.c_str());
 
   // load and preprocess image
-  cv::Mat image = cv::imread(testConfig.imagePath, CV_LOAD_IMAGE_COLOR);
+  cv::Mat image = cv::imread(testConfig.imagePath, cv::IMREAD_COLOR);
   cv::cvtColor(image, image, cv::COLOR_BGR2RGB, 3);
   cv::resize(image, image, cv::Size(testConfig.InputWidth(), testConfig.InputHeight()));
   float *input = imageToTensor(image);
